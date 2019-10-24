@@ -6,7 +6,13 @@ Coding exercise to implement IMDb search for the top 1000 IMDb movies listed at 
 ```bash
 python3 setup.py install
 ```
-## Run Local Search Index
+## Crawl IMDb Top 1000
+Navigate to IMDbSearch/imdb_scrapy and run the command:
 ```bash
-python3 service.py
+scrapy crawl imdb_top_1000_spider -o items.json -t json
 ```
+
+Now, the data is loaded into an "items.json" which you will now need to index.
+
+## Index Movie Listing
+TODO
