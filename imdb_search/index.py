@@ -24,7 +24,7 @@ class IMDbIndex:
             writer.add_document(rank=movie['rank'], title=movie['title'], year=movie['year'], rating=movie['rating'], main_people=movie['main_people'])
         writer.commit()
 
-    def search(self, search_term, result_limit=10):
+    def search(self, search_term, result_limit=None):
         query = self.parser.parse(search_term)
         with self.index.searcher() as searcher:
             search_result = {'search_term': str(search_term), 'matches': list()}
