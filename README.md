@@ -1,29 +1,24 @@
-# IMDbSearch
-Coding exercise to implement IMDb search for the top 1000 IMDb movies listed at http://www.imdb.com/search/title?groups=top_1000&amp;sort=user_rating&amp;view=simple.
+# Introduction
+This was a simple and quick coding exercise to implement search on the top IMDb movies listed here: http://www.imdb.com/search/title?groups=top_1000&amp;sort=user_rating&amp;view=simple. It's a dabble into web crawling, indexing, and search using prebuilt modules in Python.
 
-# Project Structure
-The project uses Flask for hosting API endpoint for search, Whoosh for text indexing and searching, and Scrapy to crawl and parse the web page.
-```
-.
-+-- imdb_search
-|   +-- app.py # Flask application which exposes API for search 
-|   +-- index.py # Whoosh index for text indexing and searching
-|   +-- scraper.py # Scrapy web scraper for IMDb Top 1000 movies
-+-- README.md
-+-- setup.py # Dependencies for the project
-```
-# Usage
-## Installing Dependencies
+# Setup
 ```bash
+git clone https://github.com/phch/imdb-basic-search.git imdb-basic-search
+cd imdb-basic-search
 python3 setup.py install
 ```
-## Run Local Server
+
+# Usage
+## Start Local Server
+The following command will scrape the URL for top IMDb movies, index them, and start a local server on port 5000 so you can execute queries.
 ```bash
 cd imdb_search
 flask run
 ```
 
-## Search Querying
+## Querying the Index
+You can query the index based on a URL-encoded search term. This search term comes after the "q=" portion.
 ```bash
+curl "localhost:5000/search?q=patrick%20stewart"
 curl "localhost:5000/search?q=future"
 ```
