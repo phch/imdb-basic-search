@@ -1,5 +1,5 @@
 # Introduction
-This was a simple and quick coding exercise to implement search on the top IMDb movies listed here: http://www.imdb.com/search/title?groups=top_1000&amp;sort=user_rating&amp;view=simple. It's a dabble into web crawling, indexing, and search using prebuilt modules in Python.
+This was a quick coding exercise to implement search on the top IMDb movies listed here: http://www.imdb.com/search/title?groups=top_1000&amp;sort=user_rating&amp;view=simple. It's a dabble into web crawling, indexing, and search using prebuilt modules in Python.
 
 # Setup
 ```bash
